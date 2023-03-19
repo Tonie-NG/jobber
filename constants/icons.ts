@@ -8,6 +8,7 @@ import location from "../assets/icons/location.png";
 import menu from "../assets/icons/menu.png";
 import search from "../assets/icons/search.png";
 import share from "../assets/icons/share.png";
+import profile from "../assets/images/kemal.jpg";
 
 export default {
   heart,
@@ -20,4 +21,5 @@ export default {
   location,
   chevronLeft,
   chevronRight,
+  profile,
 };

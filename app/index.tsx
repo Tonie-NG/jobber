@@ -1,13 +1,12 @@
 import { Stack, useRouter } from "expo-router";
 import React, { useState } from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import {
-  Nearbyjobs,
-  Popularjobs,
+  // Nearbyjobs,
+  // Popularjobs,
   ScreenHeaderBtn,
-  Welcome,
 } from "../components";
-import { COLORS, icons } from "../constants";
+import { COLORS, icons, profile, SIZES } from "../constants";
 
 const Home = () => {
   const router = useRouter();
@@ -20,9 +19,20 @@ const Home = () => {
             backgroundColor: COLORS.lightWhite,
           },
           headerShadowVisible: false,
-          // headerLeft: () => <ScreenHeaderBtn />,
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%" />
+          ),
+          headerTitle: "",
         }}
       />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1, padding: SIZES.medium }}>
+          <Text>Wawan</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
