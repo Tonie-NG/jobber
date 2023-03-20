@@ -1,10 +1,10 @@
-import { StyleSheet, ViewStyle } from "react-native";
+import { ImageStyle, StyleSheet, ViewStyle } from "react-native";
 
 import { COLORS, SIZES } from "../../../constants";
 
 type Styles = {
   btnContainer: ViewStyle;
-  btnImg: (dimension: string) => ViewStyle;
+  btnImg: (dimension: string) => ImageStyle;
 };
 
 const styles: Styles = StyleSheet.create<Styles | any>({

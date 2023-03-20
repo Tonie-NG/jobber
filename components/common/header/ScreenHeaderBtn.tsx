@@ -1,18 +1,25 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import styles from "./screenheader";
 
-type headerLeftProp = {
-  iconUrl: any;
-  dimension: string;
-};
+interface HeaderLeftProp {
+  iconUrl?: any;
+  dimension?: string;
+}
 
-const ScreenHeaderBtn = (props: headerLeftProp) => {
+const ScreenHeaderBtn = ({ iconUrl, dimension }: HeaderLeftProp) => {
+  function handlePress() {
+    console.log("pressed");
+  }
   return (
-    <View style={styles.btnContainer}>
-      <Text>Wow</Text>
-    </View>
+    <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
+      <Image
+        source={iconUrl}
+        resizeMode="cover"
+        style={styles.btnImg(dimension)}
+      />
+    </TouchableOpacity>
   );
 };
 

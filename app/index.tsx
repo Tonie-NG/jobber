@@ -1,7 +1,12 @@
 import { Stack, useRouter } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
-import { Nearbyjobs, Popularjobs, ScreenHeaderBtn } from "../components";
+import {
+  Nearbyjobs,
+  Popularjobs,
+  ScreenHeaderBtn,
+  Welcome,
+} from "../components";
 import { COLORS, icons, profile, SIZES } from "../constants";
 
 const Home = () => {
@@ -26,7 +31,10 @@ const Home = () => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, padding: SIZES.medium }}>
-          <Text>Wawan</Text>
+          <Welcome />
+
+          <Popularjobs />
+          <Nearbyjobs />
         </View>
       </ScrollView>
     </SafeAreaView>
