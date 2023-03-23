@@ -8,20 +8,18 @@ import {
   View,
 } from "react-native";
 import { COLORS, SIZES } from "../../../constants";
-import { useFetch } from "../../../hooks/useFetch";
 import NearbyJobCard from "../../cards/nearby/NearbyJobCard";
 import styles from "./nearbyjobstyle";
 
-const Nearbyjobs = () => {
-  const router = useRouter();
+interface NearbyJobProps {
+  data?: any;
+  error?: any;
+  isPending?: any;
+  refetch?: any;
+}
 
-  const { data, isPending, error, refetch } = useFetch({
-    endpoint: "search",
-    query: {
-      query: "Python developer in Texas, USA",
-      num_pages: 1,
-    },
-  });
+const Nearbyjobs = ({ data, error, isPending, refetch }: NearbyJobProps) => {
+  const router = useRouter();
 
   return (
     <View style={styles.container}>

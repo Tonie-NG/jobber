@@ -5,10 +5,9 @@ import { RAPID_API_KEY } from "react-native-dotenv";
 interface useFetchProps {
   endpoint: string;
   query: object;
-  oops?: boolean;
 }
 
-export const useFetch = ({ endpoint, query, oops }: useFetchProps) => {
+export const useFetch = ({ endpoint, query }: useFetchProps) => {
   const [data, setData] = useState<Array<any>>([]);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
@@ -43,7 +42,7 @@ export const useFetch = ({ endpoint, query, oops }: useFetchProps) => {
 
   useEffect(() => {
     fetchData();
-  }, [oops]);
+  }, []);
 
   const refetch = () => {
     setIsPending(true);
@@ -52,3 +51,5 @@ export const useFetch = ({ endpoint, query, oops }: useFetchProps) => {
 
   return { data, isPending, error, refetch };
 };
+
+//

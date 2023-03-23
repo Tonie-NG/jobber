@@ -12,16 +12,15 @@ import { useFetch } from "../../../hooks/useFetch";
 import PopularJobCard from "../../cards/popular/PopularCard";
 import styles from "./popularjobstyle";
 
-const Popularjobs = () => {
-  const router = useRouter();
+interface PopularJobProps {
+  data?: any;
+  error?: any;
+  isPending?: any;
+  refetch?: any;
+}
 
-  const { data, isPending, error, refetch } = useFetch({
-    endpoint: "search",
-    query: {
-      query: "React Developper",
-      num_pages: 1,
-    },
-  });
+const Popularjobs = ({ data, error, isPending, refetch }: PopularJobProps) => {
+  const router = useRouter();
 
   const [selectedJob, setSelectedJob] = useState();
 
@@ -33,9 +32,6 @@ const Popularjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular Jobs</Text>
-        <TouchableOpacity>
-          <Text style={styles.headerBtn}>Show all</Text>
-        </TouchableOpacity>
       </View>
       <View style={styles.cardsContainer}>
         {isPending ? (
