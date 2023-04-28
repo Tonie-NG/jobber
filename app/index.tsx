@@ -7,7 +7,7 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
-import { COLORS, icons, profile, SIZES } from "../constants";
+import { COLORS, SIZES, icons, profile } from "../constants";
 import { useFetch } from "../hooks/useFetch";
 
 const Home = () => {

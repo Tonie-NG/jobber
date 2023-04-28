@@ -6,12 +6,14 @@ import styles from "./screenheader";
 interface HeaderLeftProp {
   iconUrl?: any;
   dimension?: string;
+  handlePress?: any;
 }
 
-const ScreenHeaderBtn = ({ iconUrl, dimension }: HeaderLeftProp) => {
-  function handlePress() {
-    console.log("pressed");
-  }
+const ScreenHeaderBtn = ({
+  iconUrl,
+  dimension,
+  handlePress,
+}: HeaderLeftProp) => {
   return (
     <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
       <Image

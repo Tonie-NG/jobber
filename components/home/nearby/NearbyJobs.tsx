@@ -12,10 +12,10 @@ import NearbyJobCard from "../../cards/nearby/NearbyJobCard";
 import styles from "./nearbyjobstyle";
 
 interface NearbyJobProps {
-  data?: any;
+  data?: object[];
   error?: any;
-  isPending?: any;
-  refetch?: any;
+  isPending?: boolean;
+  refetch?: () => void;
 }
 
 const Nearbyjobs = ({ data, error, isPending, refetch }: NearbyJobProps) => {
@@ -40,8 +40,10 @@ const Nearbyjobs = ({ data, error, isPending, refetch }: NearbyJobProps) => {
           data?.map((job) => (
             <NearbyJobCard
               job={job}
-              key={`nearby-job-${job.job_id}`}
-              handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+              key={`nearby-job-${job["job_id"]}`}
+              handleNavigate={() =>
+                router.push(`/job-details/${job["job_id"]}`)
+              }
             />
           ))
         )}

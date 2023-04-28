@@ -8,8 +8,8 @@ interface useFetchProps {
 }
 
 export const useFetch = ({ endpoint, query }: useFetchProps) => {
-  const [data, setData] = useState<Array<any>>([]);
-  const [isPending, setIsPending] = useState(false);
+  const [data, setData] = useState<Array<object>>([]);
+  const [isPending, setIsPending] = useState<boolean>(false);
   const [error, setError] = useState(null);
 
   const options = {

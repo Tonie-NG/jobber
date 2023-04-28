@@ -6,11 +6,11 @@ import Popularjobs from "./home/popular/Popularjobs";
 import Welcome from "./home/welcome/Welcome";
 
 // // job details screen
-// import Company from "./jobdetails/company/Company";
-// import { default as JobTabs } from "./jobdetails/tabs/Tabs";
-// import { default as JobAbout } from "./jobdetails/about/About";
-// import { default as JobFooter } from "./jobdetails/footer/Footer";
-// import Specifics from "./jobdetails/specifics/Specifics";
+import Tabs from "./Tabs/Tabs";
+import About from "./about/About";
+import Company from "./company/Company";
+import Footer from "./footer/Footer";
+import Specifics from "./specifics/Specifics";
 
 // // common
 // import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
@@ -20,10 +20,10 @@ export {
   Welcome,
   Nearbyjobs,
   Popularjobs,
-  //   Company,
-  //   JobTabs,
-  //   JobAbout,
-  //   JobFooter,
-  //   Specifics,
+  Company,
+  Tabs as JobTabs,
+  About,
+  Footer,
+  Specifics,
   //   NearbyJobCard
 };

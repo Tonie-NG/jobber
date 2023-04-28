@@ -13,10 +13,10 @@ import PopularJobCard from "../../cards/popular/PopularCard";
 import styles from "./popularjobstyle";
 
 interface PopularJobProps {
-  data?: any;
+  data?: object[];
   error?: any;
-  isPending?: any;
-  refetch?: any;
+  isPending?: boolean;
+  refetch?: () => void;
 }
 
 const Popularjobs = ({ data, error, isPending, refetch }: PopularJobProps) => {
@@ -50,7 +50,7 @@ const Popularjobs = ({ data, error, isPending, refetch }: PopularJobProps) => {
                 handlePress={handlePress}
               />
             )}
-            keyExtractor={(item) => item?.job_id}
+            keyExtractor={(item) => item["job_id"]}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
           />
